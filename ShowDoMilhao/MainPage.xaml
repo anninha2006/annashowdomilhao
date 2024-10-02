@@ -3,11 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShowDoMilhao.MainPage"
              BackgroundColor="#004AAD"
-             Shell.NavBarIsVisible="False"
-             Padding="20,20,20,20">
+             Shell.NavBarIsVisible="False">
 
-       <Grid ColumnSpacing="10"
-             RowSpacing="10">
+       <Grid>
               <Grid.RowDefinitions>
                      <RowDefinition Height="200"/>
                      <RowDefinition Height="*"/>
@@ -18,16 +16,19 @@
                      <RowDefinition Height="*"/>
                      <RowDefinition Height="*"/>
               </Grid.RowDefinitions>
+              
               <Grid.ColumnDefinitions>
                      <ColumnDefinition Width="*"/>
                      <ColumnDefinition Width="*"/>
                      <ColumnDefinition Width="*"/>
               </Grid.ColumnDefinitions>
+
               <Image Source="milhao.png"
                      HeightRequest="200"
                      Grid.Row="0"
                      Grid.Column="0"
                      Grid.ColumnSpan="3"/>
+
               <Label x:Name="labelpergunta"
                      BackgroundColor="White"
                      TextColor="Black"
@@ -35,45 +36,50 @@
                      Grid.Row="1"
                      Grid.Column="0"
                      Grid.ColumnSpan="3"/>
-              <Button x:Name="Button1"
+
+              <Button x:Name="ButtonResposta1"
                       BackgroundColor="#4287f5"
                       FontSize="12"
                       Grid.Row="2"
                       Grid.Column="0"
                       Grid.ColumnSpan="3"/>
-              <Button x:Name="Button2"
+
+              <Button x:Name="ButtonResposta2"
                       BackgroundColor="#4287f5"
                       FontSize="12"
                       Grid.Row="3"
                       Grid.Column="0"
                       Grid.ColumnSpan="3"/>
-              <Button x:Name="Button3"
+
+              <Button x:Name="ButtonResposta3"
                       BackgroundColor="#4287f5"
                       FontSize="12"
                       Grid.Row="4"
                       Grid.Column="0"
                       Grid.ColumnSpan="3"/>
-              <Button x:Name="Button4"
+
+              <Button x:Name="ButtonResposta4"
                       BackgroundColor="#4287f5"
                       FontSize="12"
                       Grid.Row="5"
                       Grid.Column="0"
                       Grid.ColumnSpan="3"/>
-              <Button x:Name="Button5"
+
+              <Button x:Name="ButtonResposta5"
                       BackgroundColor="#4287f5"
                       FontSize="12"
                       Grid.Row="6"
                       Grid.Column="0"
                       Grid.ColumnSpan="3"/>
-              <ImageButton Source=""
-                           Padding="10,10,10,10"
-                           x:Name="Button"
+
+              <Button      Padding="10,10,10,10"
+                           x:Name="lalalallalal"
                            BackgroundColor="White"
                            Grid.Row="7"
                            Grid.Column="0"/>
-              <ImageButton Source=""
-                           Padding="10,10,10,10"
-                           x:Name=""
+
+              <Button      Padding="10,10,10,10"
+                           x:Name="llall"
                            BackgroundColor="White"
                            Grid.Row="7"
                            Grid.Column="1"/>

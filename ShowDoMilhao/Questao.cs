@@ -1,6 +1,6 @@
 namespace Showdomilhao
 {
-    public class Questao
+    public class Questao /// : IEquatable<Questao>
     {
         public string Pergunta;
         public string Resposta1;
@@ -17,6 +17,10 @@ namespace Showdomilhao
         private Button ButtonResposta4;
         private Button ButtonResposta5;
 
+       /* public bool Equals (Questao q)
+            {
+                return this.Nivel == q.Nivel;
+            }*/
 
         public void ConfiguraEstruturaDesenho (Label labelpergunta, Button button1, Button button2, Button button3, Button button4, Button button5)
         {
@@ -84,7 +88,7 @@ namespace Showdomilhao
             ButtonResposta4 = button4;
             ButtonResposta5 = button5;
         }
-
+       
 
 
 
