@@ -5,84 +5,107 @@
              BackgroundColor="#004AAD"
              Shell.NavBarIsVisible="False">
 
-       <Grid>
-              <Grid.RowDefinitions>
-                     <RowDefinition Height="200"/>
-                     <RowDefinition Height="*"/>
-                     <RowDefinition Height="*"/>
-                     <RowDefinition Height="*"/>
-                     <RowDefinition Height="*"/>
-                     <RowDefinition Height="*"/>
-                     <RowDefinition Height="*"/>
-                     <RowDefinition Height="*"/>
-              </Grid.RowDefinitions>
-              
-              <Grid.ColumnDefinitions>
-                     <ColumnDefinition Width="*"/>
-                     <ColumnDefinition Width="*"/>
-                     <ColumnDefinition Width="*"/>
-              </Grid.ColumnDefinitions>
+        <Grid>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-              <Image Source="milhao.png"
-                     HeightRequest="200"
-                     Grid.Row="0"
-                     Grid.Column="0"
-                     Grid.ColumnSpan="3"/>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-              <Label x:Name="labelpergunta"
-                     BackgroundColor="White"
-                     TextColor="Black"
-                     FontSize="14"
-                     Grid.Row="1"
-                     Grid.Column="0"
-                     Grid.ColumnSpan="3"/>
+                <Image Source="milhao.png"
+                       HeightRequest="200"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"/>
 
-              <Button x:Name="ButtonResposta1"
-                      BackgroundColor="#4287f5"
-                      FontSize="12"
-                      Grid.Row="2"
-                      Grid.Column="0"
-                      Grid.ColumnSpan="3"/>
+                <Label x:Name="labelpergunta"
+                       BackgroundColor="transparent"
+                       TextColor="Black"
+                       FontSize="14"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"/>
 
-              <Button x:Name="ButtonResposta2"
-                      BackgroundColor="#4287f5"
-                      FontSize="12"
-                      Grid.Row="3"
-                      Grid.Column="0"
-                      Grid.ColumnSpan="3"/>
+                <Button Text="Rsposta1"
+                        x:Name="ButtonResposta1"
+                        BackgroundColor="#4287f5"
+                        Clicked="ButtonResposta1Clicked"
+                        FontSize="12"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"/>
 
-              <Button x:Name="ButtonResposta3"
-                      BackgroundColor="#4287f5"
-                      FontSize="12"
-                      Grid.Row="4"
-                      Grid.Column="0"
-                      Grid.ColumnSpan="3"/>
+                <Button Text="Resposta2"
+                        x:Name="ButtonResposta2"
+                        BackgroundColor="#4287f5"
+                        Clicked="ButtonResposta2Clicked"
+                        FontSize="12"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"/>
 
-              <Button x:Name="ButtonResposta4"
-                      BackgroundColor="#4287f5"
-                      FontSize="12"
-                      Grid.Row="5"
-                      Grid.Column="0"
-                      Grid.ColumnSpan="3"/>
+                <Button Text="Resposta3"
+                        x:Name="ButtonResposta3"
+                        BackgroundColor="#4287f5"
+                        Clicked="ButtonResposta3Clicked"
+                        FontSize="12"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"/>
 
-              <Button x:Name="ButtonResposta5"
-                      BackgroundColor="#4287f5"
-                      FontSize="12"
-                      Grid.Row="6"
-                      Grid.Column="0"
-                      Grid.ColumnSpan="3"/>
+                <Button Text="Resposta4"
+                        x:Name="ButtonResposta4"
+                        BackgroundColor="#4287f5"
+                        Clicked="ButtonResposta4Clicked"
+                        FontSize="12"
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"/>
 
-              <Button      Padding="10,10,10,10"
-                           x:Name="lalalallalal"
-                           BackgroundColor="White"
-                           Grid.Row="7"
-                           Grid.Column="0"/>
+                <Button Text="Resposta5"
+                        x:Name="ButtonResposta5"
+                        BackgroundColor="#4287f5"
+                        Clicked="ButtonResposta5Clicked"
+                        FontSize="12"
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"/>
 
-              <Button      Padding="10,10,10,10"
-                           x:Name="llall"
-                           BackgroundColor="White"
-                           Grid.Row="7"
-                           Grid.Column="1"/>
-              
-       </Grid>
+                <Button Margin="10"
+                        Text="-3"
+                        x:Name="botaoTira3"
+                        BackgroundColor="White"
+                        Clicked="OnAjudaRetirarClicked"
+                        TextColor="Black"
+                        Grid.Row="7"
+                        Grid.Column="0"/>
+
+                <Button Margin="10"
+                        Text="Pular questão"
+                        x:Name="BotaoPula"
+                        Clicked="OnAjudaPulaClicked"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        Grid.Row="7"
+                        Grid.Column="1"/>
+
+                <Button Margin="10"
+                        Text="Universitários"
+                        x:Name="botaoUniversitarios"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        Grid.Row="7"
+                        Grid.Column="2"/>
+        </Grid>
 </ContentPage>

@@ -8,21 +8,33 @@ public partial class MainPage : ContentPage
 			gerenciador = new Gerenciador(labelpergunta, ButtonResposta1, ButtonResposta2, ButtonResposta3, ButtonResposta4, ButtonResposta5);
 			gerenciador.ProximaQuestao();
 		}
-		void OnButtonResposta01Clicked(object sender, EventArgs args)
+		void ButtonResposta1Clicked(object sender, EventArgs args)
 		{
 			gerenciador.VerfiicaCorreto(1);
 		}
-		void OnButtonResposta02Clicked(object sender, EventArgs args)
+		void ButtonResposta2Clicked(object sender, EventArgs args)
 		{
 			gerenciador.VerfiicaCorreto(2);
-		}void OnButtonResposta03Clicked(object sender, EventArgs args)
+		}void ButtonResposta3Clicked(object sender, EventArgs args)
 		{
 			gerenciador.VerfiicaCorreto(3);
-		}void OnButtonResposta04Clicked(object sender, EventArgs args)
+		}void ButtonResposta4Clicked(object sender, EventArgs args)
 		{
 			gerenciador.VerfiicaCorreto(4);
-		}void OnButtonResposta05Clicked(object sender, EventArgs args)
+		}void ButtonResposta5Clicked(object sender, EventArgs args)
 		{
 			gerenciador.VerfiicaCorreto(5);
+		}
+		void OnAjudaRetirarClicked(object s, EventArgs e)
+		{ 
+			var ajuda = new RetiraErradas();
+			ajuda.ConfiguraDesenho(ButtonResposta1, ButtonResposta2, ButtonResposta3, ButtonResposta4, ButtonResposta5);
+			ajuda.RealizarAjuda(gerenciador.GetQuestaoCorrente());
+			(s as Button).IsVisible= false;
+		}
+		void OnAjudaPulaClicked(object s, EventArgs e)
+		{
+			gerenciador.ProximaQuestao();
+			(s as Button).IsVisible= false;
 		}
 	}

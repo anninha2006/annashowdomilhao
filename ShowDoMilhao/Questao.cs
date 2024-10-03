@@ -17,11 +17,6 @@ namespace Showdomilhao
         private Button ButtonResposta4;
         private Button ButtonResposta5;
 
-       /* public bool Equals (Questao q)
-            {
-                return this.Nivel == q.Nivel;
-            }*/
-
         public void ConfiguraEstruturaDesenho (Label labelpergunta, Button button1, Button button2, Button button3, Button button4, Button button5)
         {
             Labelpergunta = labelpergunta;
@@ -39,6 +34,12 @@ namespace Showdomilhao
             ButtonResposta3.Text = Resposta3;
             ButtonResposta4.Text = Resposta4;
             ButtonResposta5.Text = Resposta5;
+
+            ButtonResposta1.IsVisible = true;
+            ButtonResposta2.IsVisible = true;
+            ButtonResposta3.IsVisible = true;
+            ButtonResposta4.IsVisible = true;
+            ButtonResposta5.IsVisible = true;
         }
 
         private Button QualBTN(int RespostaSelecionada)
@@ -89,8 +90,10 @@ namespace Showdomilhao
             ButtonResposta5 = button5;
         }
        
-
-
-
+        public bool Equals(Questao Q)
+        {
+            return this.Nivelresposta == Q.Nivelresposta &&
+                   this.Pergunta == Q.Pergunta;
+        }
     }
 }
