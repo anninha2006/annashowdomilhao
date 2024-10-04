@@ -197,7 +197,7 @@ namespace ShowDoMilhao
             Q17.Resposta3 = "Antártica";
             Q17.Resposta4 = "Kalahari";
             Q17.Resposta5 = "Atacama";
-            Q17.Respostacorreta = 1;
+            Q17.Respostacorreta = 3;
             Q17.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q17);
 

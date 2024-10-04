@@ -103,9 +103,11 @@
                 <Button Margin="10"
                         Text="Universitários"
                         x:Name="botaoUniversitarios"
+                        Clicked="OnAjudaUniversitariosClicked"
                         TextColor="Black"
                         BackgroundColor="White"
                         Grid.Row="7"
                         Grid.Column="2"/>
+                        
         </Grid>
 </ContentPage>
