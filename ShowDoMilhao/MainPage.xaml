@@ -15,6 +15,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -29,11 +30,22 @@
                        Grid.Column="0"
                        Grid.ColumnSpan="3"/>
 
+                <Label Text="Pontuação: 0"
+                       x:Name="labelPontuacao"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"/>
+
+                <Label Text="Nivel: 1"
+                       x:Name="labelNivel"
+                       Grid.Row="1"
+                       Grid.Column="2"/>
+
                 <Label x:Name="labelpergunta"
                        BackgroundColor="transparent"
                        TextColor="Black"
                        FontSize="14"
-                       Grid.Row="1"
+                       Grid.Row="2"
                        Grid.Column="0"
                        Grid.ColumnSpan="3"/>
 
@@ -42,7 +54,7 @@
                         BackgroundColor="#4287f5"
                         Clicked="ButtonResposta1Clicked"
                         FontSize="12"
-                        Grid.Row="2"
+                        Grid.Row="3"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
@@ -51,7 +63,7 @@
                         BackgroundColor="#4287f5"
                         Clicked="ButtonResposta2Clicked"
                         FontSize="12"
-                        Grid.Row="3"
+                        Grid.Row="4"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
@@ -60,7 +72,7 @@
                         BackgroundColor="#4287f5"
                         Clicked="ButtonResposta3Clicked"
                         FontSize="12"
-                        Grid.Row="4"
+                        Grid.Row="5"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
@@ -69,7 +81,7 @@
                         BackgroundColor="#4287f5"
                         Clicked="ButtonResposta4Clicked"
                         FontSize="12"
-                        Grid.Row="5"
+                        Grid.Row="6"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
@@ -78,7 +90,7 @@
                         BackgroundColor="#4287f5"
                         Clicked="ButtonResposta5Clicked"
                         FontSize="12"
-                        Grid.Row="6"
+                        Grid.Row="7"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"/>
 
@@ -88,16 +100,16 @@
                         BackgroundColor="White"
                         Clicked="OnAjudaRetirarClicked"
                         TextColor="Black"
-                        Grid.Row="7"
+                        Grid.Row="8"
                         Grid.Column="0"/>
 
                 <Button Margin="10"
-                        Text="Pular questão"
-                        x:Name="BotaoPula"
+                        Text="Pular 3x"
+                        x:Name="BotaoPular"
                         Clicked="OnAjudaPulaClicked"
                         TextColor="Black"
                         BackgroundColor="White"
-                        Grid.Row="7"
+                        Grid.Row="8"
                         Grid.Column="1"/>
 
                 <Button Margin="10"
@@ -106,8 +118,8 @@
                         Clicked="OnAjudaUniversitariosClicked"
                         TextColor="Black"
                         BackgroundColor="White"
-                        Grid.Row="7"
+                        Grid.Row="8"
                         Grid.Column="2"/>
-                        
+
         </Grid>
 </ContentPage>

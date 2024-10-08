@@ -5,7 +5,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-		gerenciador = new Gerenciador(labelpergunta, ButtonResposta1, ButtonResposta2, ButtonResposta3, ButtonResposta4, ButtonResposta5);
+		gerenciador = new Gerenciador(labelpergunta, ButtonResposta1, ButtonResposta2, ButtonResposta3, ButtonResposta4, ButtonResposta5, labelNivel, labelPontuacao);
 		gerenciador.ProximaQuestao();
 	}
 	void ButtonResposta1Clicked(object sender, EventArgs args)
@@ -35,22 +35,17 @@ public partial class MainPage : ContentPage
 		ajuda.RealizarAjuda(gerenciador.GetQuestaoCorrente());
 		(s as Button).IsVisible = false;
 	}
-	int pulou = 0;
+	int i = 3;
 	void OnAjudaPulaClicked(object s, EventArgs e)
 	{
-		if (pulou == 2)
+		gerenciador.ProximaQuestao();
+		i--;
+		BotaoPular.Text= "Pular " + i + "x";
+		if (i == 0)
 		{
 			(s as Button).IsVisible = false;
-
 		}
-		else
-		{
-			gerenciador.ProximaQuestao();
-			pulou++;
-
-
-
-		}
+		
 	}
 	void OnAjudaUniversitariosClicked(object s, EventArgs e)
 	{

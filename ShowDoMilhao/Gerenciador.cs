@@ -8,21 +8,37 @@ namespace ShowDoMilhao
         List<Questao> listaQuestoes = new List<Questao>();
         List<int> listaQuestoesRespondidas = new List<int>();
         Questao questaoCorrente;
-        public Gerenciador(Label labelpergunta, Button button1, Button button2, Button button3, Button button4, Button button5)
+
+        public int Pontuacao { get; private set; }
+
+        Label labelPontuacao;
+        Label labelNivel;
+        int NivelResposta = 1;
+
+        public void Initialize()
         {
-            CriarQuestoes (labelpergunta, button1, button2, button3, button4, button5);
+            Pontuacao = 0;
+            NivelResposta = 1;
+            ProximaQuestao();
         }
-        void  CriarQuestoes (Label labelpergunta, Button button1, Button button2, Button button3, Button button4, Button button5)
+
+        public Gerenciador(Label labelpergunta, Button button1, Button button2, Button button3, Button button4, Button button5, Label labelPontucao, Label labelNivel)
+        {
+            CriarQuestoes(labelpergunta, button1, button2, button3, button4, button5);
+            this.labelPontuacao = labelPontucao;
+            this.labelNivel = labelNivel;
+        }
+        void CriarQuestoes(Label labelpergunta, Button button1, Button button2, Button button3, Button button4, Button button5)
         {
             var Q1 = new Questao();
-            Q1.Pergunta= "Quem é o vilão da rapunzel";
-            Q1.Resposta1= "Malévola";
-            Q1.Resposta2= "Úrsula";
-            Q1.Resposta3= "Gothel";
-            Q1.Resposta4= "Cruella";
-            Q1.Resposta5= "Rainha Má";
-            Q1.Respostacorreta= 5;
-            Q1.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            Q1.Pergunta = "Quem é o vilão da rapunzel";
+            Q1.Resposta1 = "Malévola";
+            Q1.Resposta2 = "Úrsula";
+            Q1.Resposta3 = "Gothel";
+            Q1.Resposta4 = "Cruella";
+            Q1.Resposta5 = "Rainha Má";
+            Q1.Respostacorreta = 5;
+            Q1.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q1);
 
             var Q2 = new Questao();
@@ -806,316 +822,316 @@ namespace ShowDoMilhao
             Q72.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q72);
 
-            var Q73 = new Questao(); 
-            Q73.Pergunta= "Qual é o nome do rato amigo da Cinderela?";
-            Q73.Resposta1= "Gus";
-            Q73.Resposta2= "Lumière";
-            Q73.Resposta3= "Jaq";
-            Q73.Resposta4= "Timão";
-            Q73.Resposta5= "Remy";
-            Q73.Respostacorreta= 1;
-            Q73.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q73 = new Questao();
+            Q73.Pergunta = "Qual é o nome do rato amigo da Cinderela?";
+            Q73.Resposta1 = "Gus";
+            Q73.Resposta2 = "Lumière";
+            Q73.Resposta3 = "Jaq";
+            Q73.Resposta4 = "Timão";
+            Q73.Resposta5 = "Remy";
+            Q73.Respostacorreta = 1;
+            Q73.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q73);
 
-            var Q74 = new Questao(); 
-            Q74.Pergunta= "Em que ano foi lançado o filme Frozen?";
-            Q74.Resposta1= "2010";
-            Q74.Resposta2= "2012";
-            Q74.Resposta3= "2013";
-            Q74.Resposta4= "2015";
-            Q74.Resposta5= "2016";
-            Q74.Respostacorreta= 3;
-            Q74.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q74 = new Questao();
+            Q74.Pergunta = "Em que ano foi lançado o filme Frozen?";
+            Q74.Resposta1 = "2010";
+            Q74.Resposta2 = "2012";
+            Q74.Resposta3 = "2013";
+            Q74.Resposta4 = "2015";
+            Q74.Resposta5 = "2016";
+            Q74.Respostacorreta = 3;
+            Q74.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q74);
 
-            var Q75 = new Questao(); 
-            Q75.Pergunta= "Qual é o nome do brinquedo cowboy em Toy Story?";
-            Q75.Resposta1= "Buzz Lightyear";
-            Q75.Resposta2= "Woody";
-            Q75.Resposta3= "Jessie";
-            Q75.Resposta4= "Sr. Cabeça de Batata";
-            Q75.Resposta5= "Slinky";
-            Q75.Respostacorreta= 2;
-            Q75.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q75 = new Questao();
+            Q75.Pergunta = "Qual é o nome do brinquedo cowboy em Toy Story?";
+            Q75.Resposta1 = "Buzz Lightyear";
+            Q75.Resposta2 = "Woody";
+            Q75.Resposta3 = "Jessie";
+            Q75.Resposta4 = "Sr. Cabeça de Batata";
+            Q75.Resposta5 = "Slinky";
+            Q75.Respostacorreta = 2;
+            Q75.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q75);
 
-            var Q76 = new Questao(); 
-            Q76.Pergunta= "Quem é o vilão em A Pequena Sereia?";
-            Q76.Resposta1= "Scar";
-            Q76.Resposta2= "Hades";
-            Q76.Resposta3= "Úrsula";
-            Q76.Resposta4= "Jafar";
-            Q76.Resposta5= "Dr. Facilier";
-            Q76.Respostacorreta= 3;
-            Q76.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q76 = new Questao();
+            Q76.Pergunta = "Quem é o vilão em A Pequena Sereia?";
+            Q76.Resposta1 = "Scar";
+            Q76.Resposta2 = "Hades";
+            Q76.Resposta3 = "Úrsula";
+            Q76.Resposta4 = "Jafar";
+            Q76.Resposta5 = "Dr. Facilier";
+            Q76.Respostacorreta = 3;
+            Q76.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q76);
 
-            var Q77 = new Questao(); 
-            Q77.Pergunta= "Qual é o nome da princesa de A Bela e a Fera?";
-            Q77.Resposta1= "Aurora";
-            Q77.Resposta2= "Branca de Neve";
-            Q77.Resposta3= "Bela";
-            Q77.Resposta4= "Ariel";
-            Q77.Resposta5= "Cinderela";
-            Q77.Respostacorreta= 3;
-            Q77.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q77 = new Questao();
+            Q77.Pergunta = "Qual é o nome da princesa de A Bela e a Fera?";
+            Q77.Resposta1 = "Aurora";
+            Q77.Resposta2 = "Branca de Neve";
+            Q77.Resposta3 = "Bela";
+            Q77.Resposta4 = "Ariel";
+            Q77.Resposta5 = "Cinderela";
+            Q77.Respostacorreta = 3;
+            Q77.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q77);
 
-            var Q78 = new Questao(); 
-            Q78.Pergunta= "Qual o nome do dragão em Mulan?";
-            Q78.Resposta1= "Mushu";
-            Q78.Resposta2= "Khan";
-            Q78.Resposta3= "Sisu";
-            Q78.Resposta4= "Falkor";
-            Q78.Resposta5= "Tiamat";
-            Q78.Respostacorreta= 1;
-            Q78.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q78 = new Questao();
+            Q78.Pergunta = "Qual o nome do dragão em Mulan?";
+            Q78.Resposta1 = "Mushu";
+            Q78.Resposta2 = "Khan";
+            Q78.Resposta3 = "Sisu";
+            Q78.Resposta4 = "Falkor";
+            Q78.Resposta5 = "Tiamat";
+            Q78.Respostacorreta = 1;
+            Q78.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q78);
 
-            var Q79 = new Questao(); 
-            Q79.Pergunta= "Qual é o nome do reino onde Elsa e Anna vivem?";
-            Q79.Resposta1= "Corona";
-            Q79.Resposta2= "Arendelle";
-            Q79.Resposta3= "Atlantis";
-            Q79.Resposta4= "Agrabah";
-            Q79.Resposta5= "Naboo";
-            Q79.Respostacorreta= 2;
-            Q79.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q79 = new Questao();
+            Q79.Pergunta = "Qual é o nome do reino onde Elsa e Anna vivem?";
+            Q79.Resposta1 = "Corona";
+            Q79.Resposta2 = "Arendelle";
+            Q79.Resposta3 = "Atlantis";
+            Q79.Resposta4 = "Agrabah";
+            Q79.Resposta5 = "Naboo";
+            Q79.Respostacorreta = 2;
+            Q79.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q79);
 
-            var Q80 = new Questao(); 
-            Q80.Pergunta= "Qual o nome do gato em Alice no País das Maravilhas?";
-            Q80.Resposta1= "Cheshire";
-            Q80.Resposta2= "Figaro";
-            Q80.Resposta3= "Oliver";
-            Q80.Resposta4= "Simba";
-            Q80.Resposta5= "Salem";
-            Q80.Respostacorreta= 1;
-            Q80.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q80 = new Questao();
+            Q80.Pergunta = "Qual o nome do gato em Alice no País das Maravilhas?";
+            Q80.Resposta1 = "Cheshire";
+            Q80.Resposta2 = "Figaro";
+            Q80.Resposta3 = "Oliver";
+            Q80.Resposta4 = "Simba";
+            Q80.Resposta5 = "Salem";
+            Q80.Respostacorreta = 1;
+            Q80.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q80);
 
-            var Q81 = new Questao(); 
-            Q81.Pergunta= "Quem é o vilão em A Bela Adormecida?";
-            Q81.Resposta1= "Jafar";
-            Q81.Resposta2= "Cruella";
-            Q81.Resposta3= "Malévola";
-            Q81.Resposta4= "Hades";
-            Q81.Resposta5= "Capitão Gancho";
-            Q81.Respostacorreta= 3;
-            Q81.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q81 = new Questao();
+            Q81.Pergunta = "Quem é o vilão em A Bela Adormecida?";
+            Q81.Resposta1 = "Jafar";
+            Q81.Resposta2 = "Cruella";
+            Q81.Resposta3 = "Malévola";
+            Q81.Resposta4 = "Hades";
+            Q81.Resposta5 = "Capitão Gancho";
+            Q81.Respostacorreta = 3;
+            Q81.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q81);
 
-            var Q82 = new Questao(); 
-            Q82.Pergunta= "Qual é o nome do pássaro amigo do Aladdin?";
-            Q82.Resposta1= "Zazu";
-            Q82.Resposta2= "Iago";
-            Q82.Resposta3= "Abu";
-            Q82.Resposta4= "Diablo";
-            Q82.Resposta5= "Hei Hei";
-            Q82.Respostacorreta= 2;
-            Q82.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q82 = new Questao();
+            Q82.Pergunta = "Qual é o nome do pássaro amigo do Aladdin?";
+            Q82.Resposta1 = "Zazu";
+            Q82.Resposta2 = "Iago";
+            Q82.Resposta3 = "Abu";
+            Q82.Resposta4 = "Diablo";
+            Q82.Resposta5 = "Hei Hei";
+            Q82.Respostacorreta = 2;
+            Q82.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q82);
 
-            var Q83 = new Questao(); 
-            Q83.Pergunta= "Qual é o nome do rei leão?";
-            Q83.Resposta1= "Simba";
-            Q83.Resposta2= "Mufasa";
-            Q83.Resposta3= "Scar";
-            Q83.Resposta4= "Sarabi";
-            Q83.Resposta5= "Nala";
-            Q83.Respostacorreta= 1;
-            Q83.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q83 = new Questao();
+            Q83.Pergunta = "Qual é o nome do rei leão?";
+            Q83.Resposta1 = "Simba";
+            Q83.Resposta2 = "Mufasa";
+            Q83.Resposta3 = "Scar";
+            Q83.Resposta4 = "Sarabi";
+            Q83.Resposta5 = "Nala";
+            Q83.Respostacorreta = 1;
+            Q83.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q83);
 
-            var Q84 = new Questao(); 
-            Q84.Pergunta= "Quem são os pais de Hércules na mitologia grega?";
-            Q84.Resposta1= "Zeus e Hera";
-            Q84.Resposta2= "Poseidon e Anfitrite";
-            Q84.Resposta3= "Hades e Perséfone";
-            Q84.Resposta4= "Apolo e Ártemis";
-            Q84.Resposta5= "Ares e Afrodite";
-            Q84.Respostacorreta= 1;
-            Q84.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q84 = new Questao();
+            Q84.Pergunta = "Quem são os pais de Hércules na mitologia grega?";
+            Q84.Resposta1 = "Zeus e Hera";
+            Q84.Resposta2 = "Poseidon e Anfitrite";
+            Q84.Resposta3 = "Hades e Perséfone";
+            Q84.Resposta4 = "Apolo e Ártemis";
+            Q84.Resposta5 = "Ares e Afrodite";
+            Q84.Respostacorreta = 1;
+            Q84.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q84);
 
-            var Q85 = new Questao(); 
-            Q85.Pergunta= "Qual é o nome da cidade onde a história de Zootopia acontece?";
-            Q85.Resposta1= "Zootropolis";
-            Q85.Resposta2= "Animaltown";
-            Q85.Resposta3= "Zootopia";
-            Q85.Resposta4= "Safari City";
-            Q85.Resposta5= "Metropolis";
-            Q85.Respostacorreta= 3;
-            Q85.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q85 = new Questao();
+            Q85.Pergunta = "Qual é o nome da cidade onde a história de Zootopia acontece?";
+            Q85.Resposta1 = "Zootropolis";
+            Q85.Resposta2 = "Animaltown";
+            Q85.Resposta3 = "Zootopia";
+            Q85.Resposta4 = "Safari City";
+            Q85.Resposta5 = "Metropolis";
+            Q85.Respostacorreta = 3;
+            Q85.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q85);
 
             // Repita o padrão para os próximos 15 códigos.
-            var Q86 = new Questao(); 
-            Q86.Pergunta= "Qual é o nome do peixe-palhaço em Procurando Nemo?";
-            Q86.Resposta1= "Dory";
-            Q86.Resposta2= "Marlin";
-            Q86.Resposta3= "Bruce";
-            Q86.Resposta4= "Nemo";
-            Q86.Resposta5= "Gill";
-            Q86.Respostacorreta= 4;
-            Q86.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q86 = new Questao();
+            Q86.Pergunta = "Qual é o nome do peixe-palhaço em Procurando Nemo?";
+            Q86.Resposta1 = "Dory";
+            Q86.Resposta2 = "Marlin";
+            Q86.Resposta3 = "Bruce";
+            Q86.Resposta4 = "Nemo";
+            Q86.Resposta5 = "Gill";
+            Q86.Respostacorreta = 4;
+            Q86.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q86);
 
-            var Q87 = new Questao(); 
-            Q87.Pergunta= "Qual é o nome da cidade no filme Moana?";
-            Q87.Resposta1= "Motunui";
-            Q87.Resposta2= "Agrabah";
-            Q87.Resposta3= "Atlantis";
-            Q87.Resposta4= "Corona";
-            Q87.Resposta5= "Pandora";
-            Q87.Respostacorreta= 1;
-            Q87.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q87 = new Questao();
+            Q87.Pergunta = "Qual é o nome da cidade no filme Moana?";
+            Q87.Resposta1 = "Motunui";
+            Q87.Resposta2 = "Agrabah";
+            Q87.Resposta3 = "Atlantis";
+            Q87.Resposta4 = "Corona";
+            Q87.Resposta5 = "Pandora";
+            Q87.Respostacorreta = 1;
+            Q87.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q87);
 
-            var Q88 = new Questao(); 
-            Q88.Pergunta= "Quem é o vilão em O Rei Leão?";
-            Q88.Resposta1= "Shenzi";
-            Q88.Resposta2= "Scar";
-            Q88.Resposta3= "Zira";
-            Q88.Resposta4= "Hiena";
-            Q88.Resposta5= "Mufasa";
-            Q88.Respostacorreta= 2;
-            Q88.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q88 = new Questao();
+            Q88.Pergunta = "Quem é o vilão em O Rei Leão?";
+            Q88.Resposta1 = "Shenzi";
+            Q88.Resposta2 = "Scar";
+            Q88.Resposta3 = "Zira";
+            Q88.Resposta4 = "Hiena";
+            Q88.Resposta5 = "Mufasa";
+            Q88.Respostacorreta = 2;
+            Q88.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q88);
 
-            var Q89 = new Questao(); 
-            Q89.Pergunta= "Qual é o nome da princesa em A Princesa e o Sapo?";
-            Q89.Resposta1= "Ariel";
-            Q89.Resposta2= "Tiana";
-            Q89.Resposta3= "Mulan";
-            Q89.Resposta4= "Bela";
-            Q89.Resposta5= "Merida";
-            Q89.Respostacorreta= 2;
-            Q89.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q89 = new Questao();
+            Q89.Pergunta = "Qual é o nome da princesa em A Princesa e o Sapo?";
+            Q89.Resposta1 = "Ariel";
+            Q89.Resposta2 = "Tiana";
+            Q89.Resposta3 = "Mulan";
+            Q89.Resposta4 = "Bela";
+            Q89.Resposta5 = "Merida";
+            Q89.Respostacorreta = 2;
+            Q89.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q89);
 
-            var Q90 = new Questao(); 
-            Q90.Pergunta= "Qual é o nome do cachorro em Up - Altas Aventuras?";
-            Q90.Resposta1= "Bolt";
-            Q90.Resposta2= "Dug";
-            Q90.Resposta3= "Pluto";
-            Q90.Resposta4= "Snoopy";
-            Q90.Resposta5= "Max";
-            Q90.Respostacorreta= 2;
-            Q90.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q90 = new Questao();
+            Q90.Pergunta = "Qual é o nome do cachorro em Up - Altas Aventuras?";
+            Q90.Resposta1 = "Bolt";
+            Q90.Resposta2 = "Dug";
+            Q90.Resposta3 = "Pluto";
+            Q90.Resposta4 = "Snoopy";
+            Q90.Resposta5 = "Max";
+            Q90.Respostacorreta = 2;
+            Q90.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q90);
 
-            var Q91 = new Questao(); 
-            Q91.Pergunta= "Quem é o vilão em Aladdin?";
-            Q91.Resposta1= "Scar";
-            Q91.Resposta2= "Hades";
-            Q91.Resposta3= "Jafar";
-            Q91.Resposta4= "Úrsula";
-            Q91.Resposta5= "Cruella";
-            Q91.Respostacorreta= 3;
-            Q91.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q91 = new Questao();
+            Q91.Pergunta = "Quem é o vilão em Aladdin?";
+            Q91.Resposta1 = "Scar";
+            Q91.Resposta2 = "Hades";
+            Q91.Resposta3 = "Jafar";
+            Q91.Resposta4 = "Úrsula";
+            Q91.Resposta5 = "Cruella";
+            Q91.Respostacorreta = 3;
+            Q91.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q91);
 
-            var Q92 = new Questao(); 
-            Q92.Pergunta= "Quem é a princesa que perde seu sapato de cristal?";
-            Q92.Resposta1= "Branca de Neve";
-            Q92.Resposta2= "Cinderela";
-            Q92.Resposta3= "Aurora";
-            Q92.Resposta4= "Bela";
-            Q92.Resposta5= "Tiana";
-            Q92.Respostacorreta= 2;
-            Q92.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q92 = new Questao();
+            Q92.Pergunta = "Quem é a princesa que perde seu sapato de cristal?";
+            Q92.Resposta1 = "Branca de Neve";
+            Q92.Resposta2 = "Cinderela";
+            Q92.Resposta3 = "Aurora";
+            Q92.Resposta4 = "Bela";
+            Q92.Resposta5 = "Tiana";
+            Q92.Respostacorreta = 2;
+            Q92.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q92);
 
-            var Q93 = new Questao(); 
-            Q93.Pergunta= "Qual é o nome do tigre amigo do Aladdin?";
-            Q93.Resposta1= "Rajah";
-            Q93.Resposta2= "Shere Khan";
-            Q93.Resposta3= "Simba";
-            Q93.Resposta4= "Bagheera";
-            Q93.Resposta5= "Nala";
-            Q93.Respostacorreta= 1;
-            Q93.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q93 = new Questao();
+            Q93.Pergunta = "Qual é o nome do tigre amigo do Aladdin?";
+            Q93.Resposta1 = "Rajah";
+            Q93.Resposta2 = "Shere Khan";
+            Q93.Resposta3 = "Simba";
+            Q93.Resposta4 = "Bagheera";
+            Q93.Resposta5 = "Nala";
+            Q93.Respostacorreta = 1;
+            Q93.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q93);
 
-            var Q94 = new Questao(); 
-            Q94.Pergunta= "Quem é o vilão de 101 Dálmatas?";
-            Q94.Resposta1= "Jafar";
-            Q94.Resposta2= "Hades";
-            Q94.Resposta3= "Scar";
-            Q94.Resposta4= "Cruella";
-            Q94.Resposta5= "Úrsula";
-            Q94.Respostacorreta= 4;
-            Q94.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q94 = new Questao();
+            Q94.Pergunta = "Quem é o vilão de 101 Dálmatas?";
+            Q94.Resposta1 = "Jafar";
+            Q94.Resposta2 = "Hades";
+            Q94.Resposta3 = "Scar";
+            Q94.Resposta4 = "Cruella";
+            Q94.Resposta5 = "Úrsula";
+            Q94.Respostacorreta = 4;
+            Q94.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q94);
 
-            var Q95 = new Questao(); 
-            Q95.Pergunta= "Qual é o nome do robô em Big Hero 6?";
-            Q95.Resposta1= "Wall-E";
-            Q95.Resposta2= "Baymax";
-            Q95.Resposta3= "R2-D2";
-            Q95.Resposta4= "EVA";
-            Q95.Resposta5= "C-3PO";
-            Q95.Respostacorreta= 2;
-            Q95.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q95 = new Questao();
+            Q95.Pergunta = "Qual é o nome do robô em Big Hero 6?";
+            Q95.Resposta1 = "Wall-E";
+            Q95.Resposta2 = "Baymax";
+            Q95.Resposta3 = "R2-D2";
+            Q95.Resposta4 = "EVA";
+            Q95.Resposta5 = "C-3PO";
+            Q95.Respostacorreta = 2;
+            Q95.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q95);
 
-            var Q96 = new Questao(); 
-            Q96.Pergunta= "Qual é o nome da ilha no filme Moana?";
-            Q96.Resposta1= "Agrabah";
-            Q96.Resposta2= "Motunui";
-            Q96.Resposta3= "Pandora";
-            Q96.Resposta4= "Atlantis";
-            Q96.Resposta5= "Isla Nublar";
-            Q96.Respostacorreta= 2;
-            Q96.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q96 = new Questao();
+            Q96.Pergunta = "Qual é o nome da ilha no filme Moana?";
+            Q96.Resposta1 = "Agrabah";
+            Q96.Resposta2 = "Motunui";
+            Q96.Resposta3 = "Pandora";
+            Q96.Resposta4 = "Atlantis";
+            Q96.Resposta5 = "Isla Nublar";
+            Q96.Respostacorreta = 2;
+            Q96.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q96);
 
-            var Q97 = new Questao(); 
-            Q97.Pergunta= "Quem é o vilão em A Bela e a Fera?";
-            Q97.Resposta1= "Gaston";
-            Q97.Resposta2= "Fera";
-            Q97.Resposta3= "LeFou";
-            Q97.Resposta4= "Lumière";
-            Q97.Resposta5= "Cogsworth";
-            Q97.Respostacorreta= 1;
-            Q97.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q97 = new Questao();
+            Q97.Pergunta = "Quem é o vilão em A Bela e a Fera?";
+            Q97.Resposta1 = "Gaston";
+            Q97.Resposta2 = "Fera";
+            Q97.Resposta3 = "LeFou";
+            Q97.Resposta4 = "Lumière";
+            Q97.Resposta5 = "Cogsworth";
+            Q97.Respostacorreta = 1;
+            Q97.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q97);
 
-            var Q98 = new Questao(); 
-            Q98.Pergunta= "Qual é o nome da princesa que vive no mar?";
-            Q98.Resposta1= "Ariel";
-            Q98.Resposta2= "Bela";
-            Q98.Resposta3= "Cinderela";
-            Q98.Resposta4= "Aurora";
-            Q98.Resposta5= "Mulan";
-            Q98.Respostacorreta= 1;
-            Q98.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q98 = new Questao();
+            Q98.Pergunta = "Qual é o nome da princesa que vive no mar?";
+            Q98.Resposta1 = "Ariel";
+            Q98.Resposta2 = "Bela";
+            Q98.Resposta3 = "Cinderela";
+            Q98.Resposta4 = "Aurora";
+            Q98.Resposta5 = "Mulan";
+            Q98.Respostacorreta = 1;
+            Q98.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q98);
 
-            var Q99 = new Questao(); 
-            Q99.Pergunta= "Qual é o nome do elefante voador em um filme da Disney?";
-            Q99.Resposta1= "Dumbo";
-            Q99.Resposta2= "Simba";
-            Q99.Resposta3= "Bambi";
-            Q99.Resposta4= "Baloo";
-            Q99.Resposta5= "Maximus";
-            Q99.Respostacorreta= 1;
-            Q99.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q99 = new Questao();
+            Q99.Pergunta = "Qual é o nome do elefante voador em um filme da Disney?";
+            Q99.Resposta1 = "Dumbo";
+            Q99.Resposta2 = "Simba";
+            Q99.Resposta3 = "Bambi";
+            Q99.Resposta4 = "Baloo";
+            Q99.Resposta5 = "Maximus";
+            Q99.Respostacorreta = 1;
+            Q99.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q99);
 
-            var Q100 = new Questao(); 
-            Q100.Pergunta= "Quem é o vilão em Peter Pan?";
-            Q100.Resposta1= "Jafar";
-            Q100.Resposta2= "Capitão Gancho";
-            Q100.Resposta3= "Hades";
-            Q100.Resposta4= "Scar";
-            Q100.Resposta5= "Dr. Facilier";
-            Q100.Respostacorreta= 2;
-            Q100.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5 );
+            var Q100 = new Questao();
+            Q100.Pergunta = "Quem é o vilão em Peter Pan?";
+            Q100.Resposta1 = "Jafar";
+            Q100.Resposta2 = "Capitão Gancho";
+            Q100.Resposta3 = "Hades";
+            Q100.Resposta4 = "Scar";
+            Q100.Resposta5 = "Dr. Facilier";
+            Q100.Respostacorreta = 2;
+            Q100.ConfiguraEstruturaDesenho(labelpergunta, button1, button2, button3, button4, button5);
             listaQuestoes.Add(Q100);
         }
-       
+
         public Questao GetQuestaoCorrente()
         {
             return questaoCorrente;
@@ -1123,20 +1139,73 @@ namespace ShowDoMilhao
 
         public void ProximaQuestao()
         {
-            var numRandomico = Random.Shared.Next (0,listaQuestoes.Count);
-            while (listaQuestoesRespondidas.Contains (numRandomico) )
-            numRandomico = Random.Shared.Next (0,listaQuestoes.Count -1);
+            var numRandomico = Random.Shared.Next(0, listaQuestoes.Count);
+            while (listaQuestoesRespondidas.Contains(numRandomico))
+                numRandomico = Random.Shared.Next(0, listaQuestoes.Count - 1);
 
-            listaQuestoesRespondidas.Add (numRandomico);
+            listaQuestoesRespondidas.Add(numRandomico);
             questaoCorrente = listaQuestoes[numRandomico];
             questaoCorrente.Desenhar();
         }
-        public async void VerfiicaCorreto (int RespostaSelecionada)
+        public async void VerfiicaCorreto(int rr)
         {
-            if (questaoCorrente.VerificaResposta(RespostaSelecionada))
+            if (questaoCorrente.VerificaResposta(rr))
             {
-                await Task.Delay (1000);
+                await Task.Delay(1000);
+                AdicionaPontuacao(NivelResposta);
+                NivelResposta++;
                 ProximaQuestao();
+                labelPontuacao.Text = "Nível: " + NivelResposta.ToString();
+                labelNivel.Text = "Pontuação: " + Pontuacao.ToString();
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Game Over", "Você perdeu", "Ok");
+                Initialize();
+            }
+        }
+
+        void AdicionaPontuacao(int n)
+        {
+            if (n == 1)
+            {
+                Pontuacao = 1000;
+            }
+            if (n == 2)
+            {
+                Pontuacao = 2000;
+            }
+            if (n == 3)
+            {
+                Pontuacao = 5000;
+            }
+            if (n == 4)
+            {
+                Pontuacao = 10000;
+            }
+            if (n == 5)
+            {
+                Pontuacao = 20000;
+            }
+            if (n == 6)
+            {
+                Pontuacao = 50000;
+            }
+            if (n == 7)
+            {
+                Pontuacao = 100000;
+            }
+            if (n == 8)
+            {
+                Pontuacao = 200000;
+            }
+            if (n == 9)
+            {
+                Pontuacao = 500000;
+            }
+            if (n == 10)
+            {
+                Pontuacao = 1000000;
             }
         }
     }
